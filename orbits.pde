@@ -90,8 +90,9 @@ void draw() {
 	}
 	mx /= ball_count; my /= ball_count;//*/
 	// least-squared-error mean, graph x=(some array) and y=sum_0^len of (array[i] - x)^2
-	float left_error, center_error, right_error;
-	float min_x = Float.MAX_VALUE, max_x = 0, min_y = Float.MAX_VALUE, max_y = 0;
+	float left_error, right_error;
+	float min_x = Float.MAX_VALUE, max_x = -Float.MAX_VALUE;
+	float min_y = Float.MAX_VALUE, max_y = -Float.MAX_VALUE;
 	for(int i = 0; i < ball_count; i++) {
 		min_x = min(min_x, balls[i][1]); max_x = max(max_x, balls[i][1]);
 		min_y = min(min_y, balls[i][2]); max_y = max(max_y, balls[i][2]);
